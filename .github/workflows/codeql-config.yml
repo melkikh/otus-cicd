@@ -1,0 +1,7 @@
+name: "CodeQL workflow config"
+
+queries:
+  - uses: security-and-quality
+
+paths:
+  - src 
