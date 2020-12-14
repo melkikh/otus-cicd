@@ -42,6 +42,7 @@ func (s *Server) ListenAndServe() error {
 	})
 
 	s.echo.GET("/ping", s.pingHandler)
+	s.echo.POST("/exec", s.execHandler)
 
 	pocs := s.echo.Group("/s")
 	{
