@@ -20,7 +20,7 @@ jobs:
         
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v1
-      config-file: ./.github/codeql/codeql-config.yml
+      config-file: ./.github/config/codeql-config.yml
       env:
         GO111MODULE: "on"
       with:
