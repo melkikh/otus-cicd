@@ -18,15 +18,16 @@ jobs:
     - name: Setup Golang
       uses: actions/setup-go@v2
         
-    - run: git checkout HEAD^2
-      if: ${{ github.event_name == 'pull_request' }}
-
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v1
+      env:
+        GO111MODULE: "on"
       with:
          languages: go
+      paths:
+      - src
     - run: |
-       cd src && go build
+       cd src && go build cmd/pocsrv/main.go
      
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
