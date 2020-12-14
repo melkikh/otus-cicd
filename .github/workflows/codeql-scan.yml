@@ -15,7 +15,7 @@ jobs:
       with:
         fetch-depth: 2
     
-    - name: Set up JDK 11
+    - name: Setup Golang
       uses: actions/setup-go@v2
         
     - run: git checkout HEAD^2
@@ -26,7 +26,7 @@ jobs:
       with:
          languages: go
     - run: |
-       go build
+       cd src && go build
      
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
