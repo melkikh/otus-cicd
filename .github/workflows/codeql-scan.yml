@@ -20,15 +20,9 @@ jobs:
         
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v1
-      config-file: ./.github/config/codeql-config.yml
-      env:
-        GO111MODULE: "on"
       with:
-         languages: go
-      paths:
-      - src
-    - run: |
-       cd src && go build cmd/pocsrv/main.go
+        config-file: ./.github/config/codeql-config.yml
+        languages: go
      
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
